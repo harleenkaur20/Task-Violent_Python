@@ -1,0 +1,9 @@
+!pip install beautifulsoup4
+import urllib2
+from bs4 import BeautifulSoup
+def findImages(url):
+  print '[+] Finding images on ' + url
+  urlContent = urllib2.urlopen(url).read()
+  soup = BeautifulSoup(urlContent)
+  imgTags = soup.findAll('img')
+  return imgTags
